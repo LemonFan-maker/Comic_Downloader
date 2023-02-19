@@ -37,7 +37,7 @@ re
 ## Step1. 安装依赖
 
 ```shell
-pip install pillow requests fake_useragent bs4 PyPDF2
+pip install pillow requests fake_useragent bs4 PyPDF2 lxml
 ```
 
 ## Step2. 获取漫画地址
