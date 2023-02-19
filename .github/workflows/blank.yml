@@ -12,6 +12,8 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-22.04
+    permissions:
+      contents: write
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -27,11 +29,24 @@ jobs:
           
       - name: '压缩文件'
         run: |
-          tar -cvpzf output.tgz ./results ./uncombine
+          tar -cvpzf uncombine.tgz ./uncombine
+          tar -xvpzf results.tgz ./results
           
-      - uses: actions/upload-artifact@v3
-        name: '上传文件'
+#       - uses: actions/upload-artifact@v3
+#         name: '上传文件'
+#         with:
+#           name: manga
+#           path: /home/runner/work/Comic_Spider/Comic_Spider/output.tgz
+      - name: Release
+        uses: softprops/action-gh-release@v1
+          
         with:
+          tag_name: Temp
+          token: ${{ secrets.TOKEN }}
           name: manga
-          path: /home/runner/work/Comic_Spider/Comic_Spider/output.tgz
-
+          body: Download
+          draft: false
+          prerelease: false
+          files: |
+            /home/runner/work/Comic_Spider/Comic_Spider/uncombine.tgz
+            /home/runner/work/Comic_Spider/Comic_Spider/results.tgz
