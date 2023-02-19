@@ -27,6 +27,11 @@ shutil
 re
 ```
 
+# 特性
+
+1. img转PDF(实验性)
+2. PDF合并PDF
+
 # 使用方法
 
 ## Step1. 安装依赖
@@ -58,6 +63,7 @@ pip install pillow requests fake_useragent bs4 PyPDF2
 **目前已知BUG:**
 
 	1. PDF排版顺序出错。
+	1. 待补充
 
 # TDL
 
