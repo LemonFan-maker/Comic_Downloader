@@ -29,8 +29,9 @@ jobs:
         run: |
           tar -cvpzf output.tgz ./results ./uncombine
           
-      - name: '上传'
-        uses: softprops/action-gh-release@v1
+      - uses: actions/upload-artifact@v3
+        name: '上传文件'
         with:
-          tag_name: 0.0.1
-          files: ./output.tgz
+          name: manga
+          path: /home/runner/work/Comic_Spider/Comic_Spider/output.tgz
+
