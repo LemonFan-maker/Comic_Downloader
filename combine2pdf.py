@@ -1,19 +1,6 @@
 from PIL import Image, ImageFile
 from PyPDF2 import PdfReader, PdfWriter
-import os, shutil, time
-
-paths = ['./uncombine', './results']
-for i in paths:
-    if os.path.exists(i):
-        shutil.rmtree(i)
-    else: 
-        pass
-    
-for u in paths:
-    if not os.path.exists(u):
-        os.mkdir(u)
-    else:
-        pass
+import os
 
 def combine2Pdf(folderPath, pdfFilePath):
     files = os.listdir(folderPath)
