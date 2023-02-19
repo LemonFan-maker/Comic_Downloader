@@ -68,7 +68,7 @@ pip install pillow requests fake_useragent bs4 PyPDF2 lxml
 # TDL
 
 1. 修复错误
-2. 支持github action 打包下载
+2. ~~支持github action 打包下载~~ (初步已实现)
 3. 更新img2PDF
 4. 下载指定章节
 5. 以漫画名称命名目录
