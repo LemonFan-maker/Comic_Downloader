@@ -82,7 +82,7 @@ for i in range(1, last_number+1):
         cmd = 'aria2c -x 4 -s 8 -j 12 -d ./new/'+str(i)+' -i ./data/manga_per'+str(i)+'.txt --continue=true'
         print(cmd)
         os.system(cmd)
-        print('下载全部完成!')
+        print('下载成功!')
     except:
         print('出现错误')
 
