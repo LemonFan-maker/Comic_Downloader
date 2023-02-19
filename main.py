@@ -16,7 +16,7 @@ lst2 = ['./chapter.txt']
 
 for i in lst2:
     if os.path.exists(i):
-        shutil.rmtree(i)
+        os.unlink(i)
 
 start_time = time.time()
 main_url = "https://baozimh.org/manga/qianhaizhanji-qianhaiyueluwenhuayuantongkengshuxiaohaican/"
