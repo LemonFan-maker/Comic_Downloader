@@ -27,15 +27,30 @@ check_pic.check_pic_addr(manga_url)
 elements = get_newest_elements.get_elements(manga_url)
 data = get_list.get_manga_url(element=elements, url=main_url)
 
-import get_every_page, combine2pdf
+import get_every_page, rebuild_combine2pdf
 
 try:
     get_every_page()
     pass
 except:
     pass
-combine2pdf()
 
+dir = os.listdir('./new')
+folders = ["./new/" + str(i) for i in dir]
+print(folders)
+empty_folders = rebuild_combine2pdf.check_files(folders)
+
+num = 0
+for i in empty_folders:
+    num +=1
+    folder = i+'/'
+    pdfFile = "./uncombine/contract"+str(num)+".pdf"
+    rebuild_combine2pdf.combine2Pdf(folder, pdfFile)
+    print('读取成功...')
+dir_path = './uncombine/'
+# 目标文件的名字
+file_name = "./results/合并.pdf"
+rebuild_combine2pdf.MergePDF(dir_path, file_name)
 stop_time = time.time()
 
 print('耗时:',stop_time-start_time)
