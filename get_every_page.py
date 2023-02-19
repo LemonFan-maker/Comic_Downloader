@@ -65,7 +65,8 @@ regex =  r"\d"
 subst = ''
 for i in range(1, last_number+1):
     try:
-        cmd = 'aria2c -x 4 -s 8 -j 12 -d ./new/'+str(i)+' -i ./data/manga_per'+str(i)+'.txt --continue=true'
+        #cmd = 'aria2c -x 4 -s 8 -j 12 -d ./new/'+str(i)+' -i ./data/manga_per'+str(i)+'.txt --continue=true' # 个人使用
+        cmd = 'aria2c -x 16 -s 32 -j 32 -d ./new/'+str(i)+' -i ./data/manga_per'+str(i)+'.txt --continue=true
         print(cmd)
         os.system(cmd)
         print('下载成功!')
