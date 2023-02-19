@@ -19,6 +19,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: '安装依赖'
         run: |
+          sudo apt install pigz
           pip install pillow requests fake_useragent bs4 PyPDF2 lxml
           
       - name: '下载漫画'
@@ -27,13 +28,9 @@ jobs:
           
       - name: '压缩文件'
         run: |
-          tar -cvpzf manga.tgz ./results ./uncombine
+          tar -cvpzf ./results ./uncombine | pigz > output.tgz
           
       - name: '上传'
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: 1.0.0
-          name: manga
-          draft: false
-          prerelease: false
-          files: ./manga.tgz
+          files: ./output.tgz
