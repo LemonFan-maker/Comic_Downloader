@@ -29,8 +29,13 @@ data = get_list.get_manga_url(element=elements, url=main_url)
 
 import get_every_page, combine2pdf
 
-get_every_page()
+try:
+    get_every_page()
+    pass
+except:
+    pass
 combine2pdf()
+
 stop_time = time.time()
 
 print('耗时:',stop_time-start_time)

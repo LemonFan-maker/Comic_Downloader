@@ -1,20 +1,6 @@
 from bs4 import BeautifulSoup as bs
 from fake_useragent import UserAgent
-from PIL import Image
-import requests, re, os, shutil, time, sys
-
-paths = ['./data', './new']
-# for i in paths:
-#     if os.path.exists(i):
-#         shutil.rmtree(i)
-#     else: 
-#         pass
-    
-# for u in paths:
-#     if not os.path.exists(u):
-#         os.mkdir(u)
-#     else:
-#         pass
+import requests, re, os
 
 with open('chapter.txt', 'r', encoding='utf-8') as f:
     data = f.readlines()
