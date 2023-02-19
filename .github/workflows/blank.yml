@@ -21,13 +21,8 @@ jobs:
         run: |
           pip install pillow requests fake_useragent bs4 PyPDF2 lxml
           
-      - name: '克隆仓库'
-        run: |
-          git clone https://github.com/LemonFan-maker/Comic_Spider.git
-          
       - name: '下载漫画'
         run: |
-          cd Comic_Spider
           python main.py
           
       - name: '压缩文件'
@@ -41,4 +36,4 @@ jobs:
           name: manga
           draft: false
           prerelease: false
-          files: ./Comic_Spider/manga.tgz
+          files: ./manga.tgz
