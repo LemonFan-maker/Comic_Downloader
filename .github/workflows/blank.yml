@@ -30,7 +30,7 @@ jobs:
       - name: '压缩文件'
         run: |
           tar -cvpzf uncombine.tgz ./uncombine
-          tar -xvpzf results.tgz ./results
+          tar -cvpzf results.tgz ./results
           
 #       - uses: actions/upload-artifact@v3
 #         name: '上传文件'
@@ -39,7 +39,6 @@ jobs:
 #           path: /home/runner/work/Comic_Spider/Comic_Spider/output.tgz
       - name: Release
         uses: softprops/action-gh-release@v1
-          
         with:
           tag_name: Temp
           token: ${{ secrets.TOKEN }}
