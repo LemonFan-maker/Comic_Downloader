@@ -1,7 +1,7 @@
 import check_param, check_url, check_pic, get_list, get_newest_elements
 import os, time, shutil
 
-lst = ['./data', './new', './results', './uncombine', 'chapter.txt']
+lst = ['./data', './new', './results', './uncombine']
 for i in lst:
     if os.path.exists(i):
         print(i)
@@ -11,6 +11,12 @@ for u in lst:
     if not os.path.exists(u):
         print(u)
         os.mkdir(u)
+
+lst2 = ['./chapter.txt']
+
+for i in lst2:
+    if os.path.exists(i):
+        shutil.rmtree(i)
 
 start_time = time.time()
 main_url = "https://baozimh.org/manga/qianhaizhanji-qianhaiyueluwenhuayuantongkengshuxiaohaican/"
