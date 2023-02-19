@@ -19,7 +19,7 @@ for i in lst2:
         os.unlink(i)
 
 start_time = time.time()
-main_url = "https://baozimh.org/manga/qianhaizhanji-qianhaiyueluwenhuayuantongkengshuxiaohaican/"
+main_url = "https://baozimh.org/manga/yinizhiming-shanshan/"
 
 check_url.get_url_status(main_url)
 manga_url = check_param.get_manga_para(main_url)
