@@ -4,17 +4,17 @@ from PIL import Image
 import requests, re, os, shutil, time, sys
 
 paths = ['./data', './new']
-for i in paths:
-    if os.path.exists(i):
-        shutil.rmtree(i)
-    else: 
-        pass
+# for i in paths:
+#     if os.path.exists(i):
+#         shutil.rmtree(i)
+#     else: 
+#         pass
     
-for u in paths:
-    if not os.path.exists(u):
-        os.mkdir(u)
-    else:
-        pass
+# for u in paths:
+#     if not os.path.exists(u):
+#         os.mkdir(u)
+#     else:
+#         pass
 
 with open('chapter.txt', 'r', encoding='utf-8') as f:
     data = f.readlines()
@@ -82,14 +82,14 @@ for i in range(1, last_number+1):
         cmd = 'aria2c -x 4 -s 8 -j 12 -d ./new/'+str(i)+' -i ./data/manga_per'+str(i)+'.txt --continue=true'
         print(cmd)
         os.system(cmd)
-        print('下载全部完成!正在进行校验')
-        try: 
-           cmd = 'aria2c -x 16 -s 32 -j 32 -d ./new/'+str(i)+' -i ./data/manga_per'+str(i)+'.txt --continue=true'
-           print('校验完毕')
-        except:
-            print('发现错误,校验失败.')
-            sys.exit()
+        print('下载全部完成!')
     except:
         print('出现错误')
-        sys.exit()
 
+try:
+    for i in range(1, last_number):
+        cmd = 'aria2c -x 16 -s 32 -j 32 -d ./new/'+str(i)+' -i ./data/manga_per'+str(i)+'.txt --continue=true'
+        os.system(cmd)
+        print('校验完毕')
+except:
+    print('出现错误')

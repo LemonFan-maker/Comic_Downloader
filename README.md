@@ -55,6 +55,10 @@ pip install pillow requests fake_useragent bs4 PyPDF2
 
 **注意：** 提交Bug时，请复制所有报错信息，并附加漫画地址。
 
+**目前已知BUG:**
+
+	1. PDF排版顺序出错。
+
 # TDL
 
 1. 修复错误
