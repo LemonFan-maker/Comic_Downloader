@@ -49,5 +49,16 @@ pip install pillow requests fake_useragent bs4 PyPDF2
 
 ​	错误的地址:`https://baozimh.org/manga/yaoguaijiuguan-muba`, `https://baozimh.org/chapterlist/yaoguaijiuguan-muba/`, `https://baozimh.org/chapterlist/yaoguaijiuguan-muba`等等。
 
+# BUG?
 
+在使用中如果出现bug，请前往反馈，[点这里](https://github.com/LemonFan-maker/Comic_Spider/issues)
+
+**注意：**提交Bug时，请复制所有报错信息，并附加漫画地址。
+
+# TDL
+
+1. 修复错误
+2. 支持github action 打包下载
+3. 更新pic2PDF
+4.  ,etc
 
