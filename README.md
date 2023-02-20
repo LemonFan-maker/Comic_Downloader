@@ -64,7 +64,41 @@ pip install pillow requests fake_useragent bs4 PyPDF2 lxml
 
 	1. PDF排版(包括合并版(合并.pdf)与分集版(contract{n}.pdf))顺序出错
 	2. 可能出现重复画面(极少部分)
-	
+
+# GitHub Action 下载教程
+
+1. 修改`main.py`文件`main_url`处地址为自己想下载漫画的地址(见**使用方法**)
+2. 保存提交
+3. 运行Action，等待下载完成。
+
+# 个人下载(电脑&手机)教程
+
+**注意:**不建议自己下载，网速太慢(能嫖20MB/S的下载速度为啥有人要在个人设备上运行**:see_no_evil:**?)。
+
+**电脑操作(Windows&Linux)**
+
+*预先条件*
+
+​	I. Windows: **系统可以成功调用aria2下载程序**
+
+​	II. Linux:  `sudo apt install aria2`
+
+1. 同**GitHub Action 下载教程**
+2. 安装依赖
+3. 修改`cmd = 'aria2c -x 16 -s 32 -j 32 -d ./new/'+str(i)+' -i ./data/manga_per'+str(i)+'.txt --continue=true'`中`-x `、`-s`、`-j`之后的数值(改小，目前这是最大值)
+4. 保存运行。
+
+**手机操作**
+
+ 	1. 手机安装[Termux](https://github.com/termux/termux-app/releases)(直达release下载地址)
+ 	2. Termux换源`termux-chage-repo`(墙裂推荐BFSU源~可比清华的快多了(大嘘)~）
+ 	3. `apt install python python-pip git libxml2 libxslt nano aria2` 
+ 	4. `pkg i libjpeg-turbo zlib`
+ 	5. 安装依赖(时间比较长，等待)
+ 	6. 克隆仓库`git clone https://github.com/LemonFan-maker/Comic_Spider.git`
+ 	7. 同**电脑操作**
+
+*提示:* 可采用`nano`进行编辑
 
 # TDL
 
