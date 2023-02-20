@@ -4,7 +4,6 @@ import os, time, shutil
 lst = ['./data', './new', './results', './uncombine']
 for i in lst:
     if os.path.exists(i):
-        print(i)
         shutil.rmtree(i)
 
 for u in lst:
