@@ -62,8 +62,8 @@ pip install pillow requests fake_useragent bs4 PyPDF2 lxml
 
 **目前已知BUG:**
 
-	1. PDF排版(包括合并版(合并.pdf)与分集版(contract{n}.pdf))顺序出错。
-	2. 待补充
+	1. PDF排版(包括合并版(合并.pdf)与分集版(contract{n}.pdf))顺序出错
+	2. 可能出现重复画面(极少部分)
 	
 
 # TDL
