@@ -90,13 +90,13 @@ pip install pillow requests fake_useragent bs4 PyPDF2 lxml
 
 **手机操作**
 
- 	1. 手机安装[Termux](https://github.com/termux/termux-app/releases)(直达release下载地址)
- 	2. Termux换源`termux-chage-repo`(墙裂推荐BFSU源~可比清华的快多了(大嘘)~）
- 	3. `apt install python python-pip git libxml2 libxslt nano aria2` 
- 	4. `pkg i libjpeg-turbo zlib`
- 	5. 安装依赖(时间比较长，等待)
- 	6. 克隆仓库`git clone https://github.com/LemonFan-maker/Comic_Spider.git`
- 	7. 同**电脑操作**
+1. 手机安装[Termux](https://github.com/termux/termux-app/releases)(直达release下载地址)
+2. Termux换源`termux-chage-repo`(墙裂推荐BFSU源~可比清华的快多了(大嘘)~）
+3. `apt install python python-pip git libxml2 libxslt nano aria2` 
+4. `pkg i libjpeg-turbo zlib`
+5. 安装依赖(时间比较长，等待)
+6. 克隆仓库`git clone https://github.com/LemonFan-maker/Comic_Spider.git`
+7. 同**电脑操作**
 
 *提示:* 可采用`nano`进行编辑
 
