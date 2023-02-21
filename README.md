@@ -100,11 +100,83 @@ pip install pillow requests fake_useragent bs4 PyPDF2 lxml
 
 *提示:* 可采用`nano`进行编辑
 
+# 难道需要我介绍原理吗?
+
+*恶！大概率没人能看懂这破东西到底是咋写的(我也不知道我写这玩儿意的时候喝了几瓶子假酒……？)*
+
+```
+│  .gitignore
+│  aria2c.md
+│  check_param.py
+│  check_pic.py
+│  check_url.py
+│  combine2pdf.py
+│  get_every_page.py
+│  get_list.py
+│  get_newest_elements.py
+│  LICENSE
+│  main.py
+│  README.md
+│  rebuild_combine2pdf.py
+│  
+├─.github
+│  ├─ISSUE_TEMPLATE
+│  │      Bug.md
+│  │      
+│  └─workflows
+│          blank.yml
+│          
+└─assets
+        helper1.png
+        helper2.png
+```
+
+
+
+**原理简述：**
+
+## main.py
+
+主程序，调用文件夹下所有的模组文件，并且重新创建文件夹(空的)
+
+## check_param.py
+
+验证这个漫画是否存在章节列表(方便下载)，并返回章节列表的地址
+
+## check_url.py
+
+判断漫画是否存在(方法有待改进，目前已经有想法了)
+
+## check_pic.py
+
+把章节列表保存在chapter.txt文件，方便后面读取
+
+## get_every_page.py
+
+调用系统aria2下载漫画(**注意：**aria2必须在环境变量里否则无法调用会报错)
+
+## get_list.py
+
+大概是返回漫画每一页的地址……？(忘了)
+
+## get_newest_elements.py
+
+获得最新漫画页
+
+## combine2pdf.py
+
+旧的image转pdf
+
+## rebuild_combine2pdf.py
+
+新式转换算法
+
 # TDL
 
 1. 修复错误
 2. ~~支持github action 打包下载~~ (初步已实现)
-3. 更新img2PDF
-4. 下载指定章节
-5. 以漫画名称命名目录
-6. ,etc
+3. 修改漫画是否存在检测方式
+4. 更新img2PDF
+5. 下载指定章节
+6. 以漫画名称命名目录
+7. ,etc
