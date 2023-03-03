@@ -1,4 +1,4 @@
-import check_param, check_url, check_pic, get_list, get_newest_elements
+import check_url, get_list, get_newest_elements
 import os, time, shutil
 
 lst = ['./data', './new', './results', './uncombine']
@@ -21,8 +21,8 @@ start_time = time.time()
 main_url = "https://baozimh.org/manga/yinizhiming-shanshan/"
 
 check_url.get_url_status(main_url)
-manga_url = check_param.get_manga_para(main_url)
-check_pic.check_pic_addr(manga_url)
+manga_url = check_url.get_manga_para(main_url)
+check_url.check_pic_addr(manga_url)
 elements = get_newest_elements.get_elements(manga_url)
 data = get_list.get_manga_url(element=elements, url=main_url)
 
